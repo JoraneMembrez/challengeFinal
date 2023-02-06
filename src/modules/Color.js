@@ -1,4 +1,5 @@
-import * as colorConvert from "color-convert";
+import * as convert from "color-convert";
+
 class Color {
   #hex;
   #hsl;
@@ -6,7 +7,8 @@ class Color {
 
   constructor(hsl) {
     this.#hsl = hsl;
-    this.#hex = "#" + colorConvert.hsl.hex(hsl);
+    this.#hex = `#${convert.hsl.hex(hsl)}`;
+    //console.log(`hsl : ${hsl}, hex ${this.#hex}`);
     this.#element = this.#generateElement();
   }
 
